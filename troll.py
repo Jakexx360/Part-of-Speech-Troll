@@ -55,7 +55,8 @@ def troll(string):
         if sentence_struct[i] == '.':
             # Add a space conditionally depending on punctuation
             sentence_struct[i] = punctuation.pop(0)
-            if not any(punc in sentence_struct[i] for punc in ["``"]):
+            if not any(punc in sentence_struct[i] for punc in ["``", "(",
+                                                               "[", "{"]):
                 sentence_struct[i] += ' '
         else:
             # Find a word with a matching part of speech
